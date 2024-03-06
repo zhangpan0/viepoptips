@@ -1,17 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+    颜色拾取器:<colorPicker v-model="color" @change="changeColor"></colorPicker>
+    </div>
+    <div>
+      <ieTips></ieTips>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      color:'#0066ff'
+    }
+  },
   components: {
-    HelloWorld
+    
+  },
+  methods:{
+    changeColor (e) {
+      console.log('e',e);
+    }
   }
 }
 </script>
@@ -21,7 +34,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
